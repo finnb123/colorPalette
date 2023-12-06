@@ -51,4 +51,16 @@ public class ColorPaletteTests{
         ArrayList<ArrayList<Integer>> palette = colorTwo.getPalette();
         Assertions.assertTrue(colorTwo.getPalette().contains(newColor));
     }
+
+    @Test
+    @DisplayName("Test for validity of color added to palette")
+    public void testValidityAddColor(){
+        colorPalette colorTwo = new colorPalette(2);
+        ArrayList<Integer> newColor = new ArrayList<Integer>();
+        newColor.add(300);
+        newColor.add(20);
+        newColor.add(255);
+        IllegalArgumentException thrown = Assertions.assertThrows( IllegalArgumentException.class, () -> colorTwo.addColor(newColor));
+        Assertions.assertEquals("Illegal RGB Value", thrown.getMessage());
+    }
 }
