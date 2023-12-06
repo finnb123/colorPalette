@@ -6,33 +6,36 @@ import org.junit.jupiter.api.Test;
 import colorPalette.ColorPalette;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class ColorPaletteTests{
 
     private ColorPalette colorTwo;
     private ArrayList<Integer> newColor;
+    private ArrayList<ArrayList<Integer>> testPalette;
     @BeforeEach
     public void setUp(){
         colorTwo = new ColorPalette(2);
         newColor = new ArrayList<Integer>();
+        testPalette = new ArrayList<ArrayList<Integer>>();
     }
 
     @Test
     @DisplayName("Testing colorPalette object initialization")
     public void initializeObjectWithTwo(){
 //        colorPalette colorTwo = new colorPalette(2);
-        ArrayList<ArrayList<Integer>> expectedPalette = new ArrayList<ArrayList<Integer>>();
-        expectedPalette.add(new ArrayList<>());
-        expectedPalette.add(new ArrayList<>());
-        expectedPalette.get(0).add(0);
-        expectedPalette.get(0).add(0);
-        expectedPalette.get(0).add(0);
-        expectedPalette.get(1).add(255);
-        expectedPalette.get(1).add(255);
-        expectedPalette.get(1).add(255);
+        testPalette.add(new ArrayList<>());
+        testPalette.add(new ArrayList<>());
+        testPalette.get(0).add(0);
+        testPalette.get(0).add(0);
+        testPalette.get(0).add(0);
+        testPalette.get(1).add(255);
+        testPalette.get(1).add(255);
+        testPalette.get(1).add(255);
 
-        Assertions.assertEquals(expectedPalette, colorTwo.getPalette());
+        Assertions.assertEquals(testPalette, colorTwo.getPalette());
     }
 
     @Test
@@ -74,6 +77,29 @@ public class ColorPaletteTests{
     public void testSizeOfOuterArrayList(){
         ColorPalette colorPalette = new ColorPalette(1024);
         Assertions.assertEquals(1024, colorPalette.getPalette().size());
+    }
+
+    @Test
+    @DisplayName("Test for generating palette of 4 values")
+    public void testFourColorPalette(){
+        testPalette.add(new ArrayList<>());
+        testPalette.add(new ArrayList<>());
+        testPalette.add(new ArrayList<>());
+        testPalette.add(new ArrayList<>());
+        List<Integer> black = Arrays.asList(255,255,255);
+        List<Integer> red = Arrays.asList(255,0,0);
+        List<Integer> green = Arrays.asList(0,255,0);
+        List<Integer> blue = Arrays.asList(0,0,255);
+
+        testPalette.get(0).addAll(black);
+        testPalette.get(1).addAll(red);
+        testPalette.get(2).addAll(green);
+        testPalette.get(3).addAll(blue);
+
+        ColorPalette colorFour = new ColorPalette(4);
+
+        Assertions.assertEquals(testPalette, colorFour);
+
     }
 
 //    @Test
