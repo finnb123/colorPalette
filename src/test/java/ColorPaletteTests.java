@@ -125,7 +125,7 @@ public class ColorPaletteTests {
         List<Integer> red = Arrays.asList(255,0,0);
         ArrayList<Integer> colorTwo = new ArrayList<Integer>(red);
         IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> colorFour.addColor(colorTwo));
-
+        Assertions.assertEquals("Color Already Exists", thrown.getMessage());
     }
 
 }
