@@ -73,7 +73,7 @@ public class ColorPaletteTests{
     @DisplayName("Test for generating variable number of ArrayLists to contain the RGB values")
     public void testSizeOfOuterArrayList(){
         ColorPalette colorPalette = new ColorPalette(1024);
-        Assertions.assertEquals(colorPalette.getPalette().size(), 1024);
+        Assertions.assertEquals(1024, colorPalette.getPalette().size());
     }
 
 //    @Test
