@@ -1,13 +1,13 @@
 package colorPalette;
 import java.util.*;
 
-public class colorPalette {
+public class ColorPalette {
 
     ArrayList<ArrayList<Integer>> palette;
-    public colorPalette() throws IllegalArgumentException{
+    public ColorPalette() throws IllegalArgumentException{
         throw new IllegalArgumentException("Expected 1 parameter, but 0 were provided");
     }
-    public colorPalette(int numberOfColors) throws IllegalArgumentException{
+    public ColorPalette(int numberOfColors) throws IllegalArgumentException{
         if (numberOfColors < 2 || numberOfColors > 1025 || !((numberOfColors & (numberOfColors - 1)) == 0)){
             throw new IllegalArgumentException("Input must be greater than 1, a power of 2, and less than 1025.");
         }
