@@ -24,39 +24,36 @@ public class ColorPalette {
             this.palette.get(1).add(255);
             this.palette.get(1).add(255);
         }
-//        if(numberOfColors==4){
-//            for(int i=0; i<=numberOfColors;i++){
-//                this.palette.add(new ArrayList<>());
-//                switch(i){
-//                    case 0:
-//                        //Black
-//                        this.palette.get(i).add(255);
-//                        this.palette.get(i).add(255);
-//                        this.palette.get(i).add(255);
-//                        break;
-//                    case 1:
-//                        //Red
-//                        this.palette.get(i).add(255);
-//                        this.palette.get(i).add(0);
-//                        this.palette.get(i).add(0);
-//                        break;
-//                    case 2:
-//                        //Green
-//                        this.palette.get(i).add(0);
-//                        this.palette.get(i).add(255);
-//                        this.palette.get(i).add(0);
-//                        break;
-//                    case 3:
-//                        //Blue
-//                        this.palette.get(i).add(0);
-//                        this.palette.get(i).add(0);
-//                        this.palette.get(i).add(255);
-//                        break;
-//                }
-//            }
-//        }
-
-
+        if(numberOfColors == 4){
+            for(int i=0; i<=4;i++) {
+                switch(i){
+                    case 0:
+                        //Black
+                        this.palette.get(i).add(255);
+                        this.palette.get(i).add(255);
+                        this.palette.get(i).add(255);
+                        break;
+                    case 1:
+                        //Red
+                        this.palette.get(i).add(255);
+                        this.palette.get(i).add(0);
+                        this.palette.get(i).add(0);
+                        break;
+                    case 2:
+                        //Green
+                        this.palette.get(i).add(0);
+                        this.palette.get(i).add(255);
+                        this.palette.get(i).add(0);
+                        break;
+                    case 3:
+                        //Blue
+                        this.palette.get(i).add(0);
+                        this.palette.get(i).add(0);
+                        this.palette.get(i).add(255);
+                        break;
+                }
+            }
+        }
     }
 
     public ArrayList<ArrayList<Integer>> getPalette(){

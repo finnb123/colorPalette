@@ -98,7 +98,7 @@ public class ColorPaletteTests{
 
         ColorPalette colorFour = new ColorPalette(4);
 
-        Assertions.assertEquals(testPalette, colorFour);
+        Assertions.assertEquals(testPalette, colorFour.getPalette());
 
     }
 
