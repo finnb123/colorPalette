@@ -28,8 +28,13 @@ public class colorPalette {
         return this.palette;
     }
 
-    public void addColor(ArrayList<Integer> newColor){
+    public void addColor(ArrayList<Integer> newColor) throws IllegalArgumentException{
         //Add new Row
+        for (Integer value : newColor){
+            if(value<0 || value>255){
+                throw new IllegalArgumentException("Illegal RGB Value");
+            }
+        }
         this.palette.add(new ArrayList<Integer>(newColor));
     }
 
