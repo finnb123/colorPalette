@@ -15,41 +15,28 @@ public class ColorPalette {
         for(int i = 0; i < numberOfColors; i++){
             this.palette.add(new ArrayList<>());
         }
+        //White
+        List<Integer> white = Arrays.asList(0, 0, 0);
+        this.palette.get(0).addAll(white);
         if(numberOfColors == 2){
-            this.palette.get(0).add(0);
-            this.palette.get(0).add(0);
-            this.palette.get(0).add(0);
-
-            this.palette.get(1).add(255);
-            this.palette.get(1).add(255);
-            this.palette.get(1).add(255);
+            //Black
+            List<Integer> black = Arrays.asList(255,255,255);
+            this.palette.get(1).addAll(black);
         }
-        if(numberOfColors == 4){
-            for(int i=0; i<=4;i++) {
+        if(numberOfColors == 4) {
+            //Set all values to 0
+            for(int i = 1; i<numberOfColors;i++){
+                this.palette.get(i).addAll(white);
                 switch(i){
-                    case 0:
-                        //Black
-                        this.palette.get(i).add(255);
-                        this.palette.get(i).add(255);
-                        this.palette.get(i).add(255);
-                        break;
                     case 1:
-                        //Red
-                        this.palette.get(i).add(255);
-                        this.palette.get(i).add(0);
-                        this.palette.get(i).add(0);
+                        //red
+                        this.palette.get(i).set(0,255);
                         break;
                     case 2:
-                        //Green
-                        this.palette.get(i).add(0);
-                        this.palette.get(i).add(255);
-                        this.palette.get(i).add(0);
+                        this.palette.get(i).set(1,255);
                         break;
                     case 3:
-                        //Blue
-                        this.palette.get(i).add(0);
-                        this.palette.get(i).add(0);
-                        this.palette.get(i).add(255);
+                        this.palette.get(i).set(2,255);
                         break;
                 }
             }
