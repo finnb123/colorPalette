@@ -47,8 +47,11 @@ public class ColorPalette {
         return this.palette;
     }
 
-    public void addColor(ArrayList<Integer> newColor) throws IllegalArgumentException{
+    public void addColor(ArrayList<Integer> newColor) throws IllegalArgumentException, ListSizeExceededException{
         //Add new Row
+        if(this.palette.size() == 1025){
+            throw new ListSizeExceededException("Palette Size Exceeded");
+        }
         for (Integer value : newColor){
             if(value<0 || value>255){
                 throw new IllegalArgumentException("Illegal RGB Value");
