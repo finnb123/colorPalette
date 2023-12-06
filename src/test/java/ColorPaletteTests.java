@@ -45,7 +45,7 @@ public class ColorPaletteTests{
         colorPalette colorTwo = new colorPalette(2);
         ArrayList<Integer> newColor = new ArrayList<Integer>();
         newColor.add(255);
-        newColor.add(255);
+        newColor.add(0);
         newColor.add(255);
         colorTwo.addColor(newColor);
         ArrayList<ArrayList<Integer>> palette = colorTwo.getPalette();

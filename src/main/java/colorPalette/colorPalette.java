@@ -30,7 +30,7 @@ public class colorPalette {
 
     public void addColor(ArrayList<Integer> newColor){
         //Add new Row
-        this.palette.add(new ArrayList<Integer>());
+        this.palette.add(new ArrayList<Integer>(newColor));
     }
 
 
