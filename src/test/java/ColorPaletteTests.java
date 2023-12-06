@@ -122,9 +122,10 @@ public class ColorPaletteTests {
     @DisplayName("Test for exception if color has already been added to palette")
     public void testColorAlreadyAdded(){
         ColorPalette colorFour = new ColorPalette(4);
-        List<Integer> red = Arrays.asList(255,0,0);
-        ArrayList<Integer> colorTwo = new ArrayList<Integer>(red);
-        IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> colorFour.addColor(colorTwo));
+        newColor.add(255);
+        newColor.add(0);
+        newColor.add(0);
+        IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> colorFour.addColor(newColor));
         Assertions.assertEquals("Color Already Exists", thrown.getMessage());
     }
 
