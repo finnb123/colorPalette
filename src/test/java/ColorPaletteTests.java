@@ -105,10 +105,17 @@ public class ColorPaletteTests {
 
     }
 
-//    @Test
-//    @DisplayName("Test for generating palette of 8 values")
-//    public void testEightColorPalette(){
-//        Assertions.assertEquals(8, colorEight.getPalette().size());
-//    }
+    @Test
+    @DisplayName("Test for adding color value that would put palette size over limit of 1025")
+    public void testAddOverSizeLimit(){
+        ColorPalette color1024 = new ColorPalette(1024);
+        List<Integer> black = Arrays.asList(0,0,0);
+        newColor.addAll(black);
+        color1024.addColor(newColor);
+        List<Integer> red = Arrays.asList(255,0,0);
+        ArrayList<Integer> colorTwo = new ArrayList<Integer>(red);
+        ListSizeExceededException thrown = Assertions.assertThrows(ListSizeExceededException.class, () -> color1024.addColor(colorTwo));
+        Assertions.assertEquals("Palette Size Exceeded", thrown.getMessage());
+    }
 
 }
