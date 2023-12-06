@@ -3,17 +3,26 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import colorPalette.colorPalette;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class ColorPaletteTests{
     @Test
     @DisplayName("Testing colorPalette object initialization")
     public void initializeObjectWithTwo(){
         colorPalette colorTwo = new colorPalette(2);
-        int[][] expectedPalette = {
-                {0,0,0},
-                {255,255,255}
-        };
-        Assertions.assertArrayEquals(expectedPalette, colorTwo.getPalette());
+        ArrayList<ArrayList<Integer>> expectedPalette = new ArrayList<ArrayList<Integer>>();
+        expectedPalette.add(new ArrayList<>());
+        expectedPalette.add(new ArrayList<>());
+        expectedPalette.get(0).add(0);
+        expectedPalette.get(0).add(0);
+        expectedPalette.get(0).add(0);
+        expectedPalette.get(1).add(255);
+        expectedPalette.get(1).add(255);
+        expectedPalette.get(1).add(255);
+
+        Assertions.assertEquals(expectedPalette, colorTwo.getPalette());
     }
 
     @Test
@@ -34,16 +43,12 @@ public class ColorPaletteTests{
     @DisplayName("Test for adding a color to the palette")
     public void testAddColorToPalette(){
         colorPalette colorTwo = new colorPalette(2);
-        int[] newColor = new int[]{255,0,255};
+        ArrayList<Integer> newColor = new ArrayList<Integer>();
+        newColor.add(255);
+        newColor.add(255);
+        newColor.add(255);
         colorTwo.addColor(newColor);
-        int[][] palette = colorTwo.getPalette();
-        boolean b = false;
-        for (int row=0; row<=palette.length ;row++){
-            if (palette[row] == newColor) {
-                b = true;
-                break;
-            }
-        }
-        Assertions.assertTrue(b);
+        ArrayList<ArrayList<Integer>> palette = colorTwo.getPalette();
+        Assertions.assertTrue(colorTwo.getPalette().contains(newColor));
     }
 }
