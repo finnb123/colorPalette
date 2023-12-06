@@ -12,9 +12,6 @@ public class ColorPaletteTests{
                 {0,0,0},
                 {255,255,255}
         };
-        Assertions.assertEquals(expectedPalette, colorTwo);
-
-
-
+        Assertions.assertArrayEquals(expectedPalette, colorTwo.getPalette());
     }
 }
