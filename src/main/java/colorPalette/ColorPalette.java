@@ -15,18 +15,15 @@ public class ColorPalette {
         for(int i = 0; i < numberOfColors; i++){
             this.palette.add(new ArrayList<>());
         }
-//        if(numberOfColors == 2){
-//            this.palette.add(new ArrayList<>());
-//            this.palette.add(new ArrayList<>());
-//
-//            this.palette.get(0).add(0);
-//            this.palette.get(0).add(0);
-//            this.palette.get(0).add(0);
-//
-//            this.palette.get(1).add(255);
-//            this.palette.get(1).add(255);
-//            this.palette.get(1).add(255);
-//        }
+        if(numberOfColors == 2){
+            this.palette.get(0).add(0);
+            this.palette.get(0).add(0);
+            this.palette.get(0).add(0);
+
+            this.palette.get(1).add(255);
+            this.palette.get(1).add(255);
+            this.palette.get(1).add(255);
+        }
 //        if(numberOfColors==4){
 //            for(int i=0; i<=numberOfColors;i++){
 //                this.palette.add(new ArrayList<>());
