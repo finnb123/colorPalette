@@ -29,4 +29,21 @@ public class ColorPaletteTests{
         IllegalArgumentException thrown = Assertions.assertThrows( IllegalArgumentException.class, () -> new colorPalette(3));
         Assertions.assertEquals("Input must be greater than 1, a power of 2, and less than 1025.", thrown.getMessage());
     }
+
+    @Test
+    @DisplayName("Test for adding a color to the palette")
+    public void testAddColorToPalette(){
+        colorPalette colorTwo = new colorPalette(2);
+        int[] newColor = new int[]{255,0,255};
+        colorTwo.addColor(newColor);
+        int[][] palette = colorTwo.getPalette();
+        boolean b = false;
+        for (int row=0; row<=palette.length ;row++){
+            if (palette[row] == newColor) {
+                b = true;
+                break;
+            }
+        }
+        Assertions.assertTrue(b);
+    }
 }
