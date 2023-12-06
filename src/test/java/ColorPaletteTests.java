@@ -22,4 +22,11 @@ public class ColorPaletteTests{
         IllegalArgumentException thrown = Assertions.assertThrows( IllegalArgumentException.class, () -> new colorPalette());
         Assertions.assertEquals("Expected 1 parameter, but 0 were provided", thrown.getMessage());
     }
+
+    @Test
+    @DisplayName("Testing if constructor with incorrect input results in exception")
+    public void testColorPaletteIllegalInput_throwsIllegalArgumentException(){
+        IllegalArgumentException thrown = Assertions.assertThrows( IllegalArgumentException.class, () -> new colorPalette(3));
+        Assertions.assertEquals("Input must be greater than 1, a power of 2, and less than 1025.", thrown.getMessage());
+    }
 }
